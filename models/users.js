@@ -4,6 +4,14 @@ const userSchema = mongoose.Schema({
 	
 	_id: mongoose.Schema.Types.ObjectId,
 
+	firstname:{
+		type: String,
+		required: true
+	},
+	lastname:{
+		type: String,
+		required: true
+	},
 	email: {
 		type: String,
 		required: true,
@@ -14,8 +22,13 @@ const userSchema = mongoose.Schema({
 	password: {
 		type: String,
 		required: true
-	}
+	},
+	joined: {
+		type: Date,
+    	default: Date.now
+	} 
 
 });
 
 module.exports = mongoose.model('User', userSchema);
+
